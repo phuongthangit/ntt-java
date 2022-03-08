@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { Routes, Route } from "react-router-dom";
+import './App.scss';
+
+//Constants
+import LinkName from './constants/linkName';
+
+import Layout from './screens/Layout/Layout';
+
+
+//change password
+const FormRegisterScreen = React.lazy(() => import("./screens/FormRegister/FormRegister"));
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    /**
+     * render template
+     */
+    return (
+        <React.Suspense fallback={<></>}>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path={LinkName.FORM_REGISTER} element={<FormRegisterScreen />} />
+                </Route>
+            </Routes>
+        </React.Suspense>
+    );
 }
 
 export default App;
