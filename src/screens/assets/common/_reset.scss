@@ -73,6 +73,9 @@ select[readonly] {
     pointer-events: none;
     touch-action: none;
 }
+.btn-custom{
+	min-width: 120px;
+}
 
 /* scroolbar */
 ::-webkit-scrollbar {
