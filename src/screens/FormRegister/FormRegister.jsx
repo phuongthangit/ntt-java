@@ -1,4 +1,5 @@
 import CheckBoxComponent from "../../components/CheckBox/CheckBoxComponent";
+import DatePickerComponent from "../../components/DatePicker/DatePicker";
 import InputComponent from "../../components/Input/Input";
 import InputFlexComponent from "../../components/Input/InputFlex";
 import LabelComponent from "../../components/Label/LabelComponent";
@@ -79,7 +80,27 @@ export default function FormRegisterScreen() {
                                 </div>
                             </div>
                             <hr />
-
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <div className="form-group d-flex flex-wrap">
+                                        <LabelComponent label={"性別 "} required={true} />
+                                        <div className="d-flex justify-content-center align-items-start">
+                                            <SelectBoxComponent
+                                                label={"男性"}
+                                                defaultChecked={true}
+                                                required={true} />
+                                            <SelectBoxComponent
+                                                label={"男性"}
+                                                defaultChecked={true}
+                                                required={true} />
+                                            <SelectBoxComponent
+                                                label={"男性"}
+                                                defaultChecked={true}
+                                                required={true} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <hr />
 
                             <div className="row mb-3">
@@ -126,11 +147,10 @@ export default function FormRegisterScreen() {
                                 </div>
                             </div>
                             <div className="row mb-3">
-                                <div className="col-12">
-                                    <InputFlexComponent
+                                <div className="col-12 d-flex">
+                                    <LabelComponent label={"都道府県"} required={true} />
+                                    <SelectBoxComponent
                                         type={"text"}
-                                        label={"都道府県"}
-                                        placeholder={"年齢は半角数字にしてください。"}
                                         name={"pref_name"}
                                         required={true} />
                                 </div>
@@ -186,6 +206,15 @@ export default function FormRegisterScreen() {
                                         placeholder={"メールアドレスを入力してください"}
                                         name={"mail_address"}
                                         required={true} />
+                                </div>
+                            </div>
+                            <hr />
+                            <div className="row">
+                                <div className="col-lg-12 d-flex">
+                                    <LabelComponent label={"応募日 "} required={false} />
+                                    <DatePickerComponent
+                                        required={true}
+                                        name={"application_date"} />
                                 </div>
                             </div>
                             <hr />

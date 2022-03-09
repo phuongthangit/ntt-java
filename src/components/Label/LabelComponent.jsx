@@ -16,3 +16,6 @@ export default function LabelComponent(props) {
         </div>
     )
 }
+LabelComponent.defaultProps = {
+    required: false,
+};

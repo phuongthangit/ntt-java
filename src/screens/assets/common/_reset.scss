@@ -31,7 +31,7 @@ button, input, select{
 input,
 select,
 textarea{
-    border-color: #eaeaea;
+    border-color: #d7d7d7;
     &:hover,
     &:focus{
     outline-color: $color-main;
@@ -73,8 +73,8 @@ select[readonly] {
     pointer-events: none;
     touch-action: none;
 }
-.btn-custom{
-	min-width: 120px;
+.react-datepicker__triangle::before, .react-datepicker__triangle::after{
+	display: none;
 }
 
 /* scroolbar */
@@ -140,7 +140,7 @@ select[readonly] {
 		font-size: 2rem;
 		font-weight: 700;
 		img {
-			height: 15rem;
+			height: 8rem;
 		}
 	}
 	.sidebar-toggler {
