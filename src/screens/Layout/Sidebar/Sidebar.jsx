@@ -1,32 +1,7 @@
-import { useEffect, useState } from "react";
 import logo from "../../assets/img/logo.png";
 export default function Sidebar(props) {
 
-    const [activeSidebar, setActiveSidebar] = useState(true);
-
-    /**
-     * handleResize
-     */
-    const handleResize = () => {
-        if (window.innerWidth >= 1280) {
-            setActiveSidebar(true);
-        }else{
-            setActiveSidebar(false);
-        }
-    }
-
-    /**
-     * init size
-     */
-    useEffect(() => {
-        handleResize();
-        window.addEventListener("resize", () => {
-            handleResize();
-        });
-        return () => {
-            window.removeEventListener("resize", function () { });
-        }
-    }, []);
+    const { activeSidebar } = props;
     /**
      * render template
      */
@@ -47,19 +22,19 @@ export default function Sidebar(props) {
                         <li className="sidebar-title">メニュー</li>
                         <li className="sidebar-item  ">
                             <a href="#" className="sidebar-link">
-                                <span>トップページ</span>
+                                <span>ホームページ</span>
                             </a>
                         </li>
                         <li className="sidebar-item  has-sub active">
                             <a href="#" className="sidebar-link">
-                                <span>リストページ</span>
+                                <span>応募者登録</span>
                             </a>
                             <ul className="submenu ">
                                 <li className="submenu-item ">
-                                    <a href="#">リストページ 1</a>
+                                    <a href="#">応募者登録 1</a>
                                 </li>
                                 <li className="submenu-item ">
-                                    <a href="#">リストページ 2</a>
+                                    <a href="#">応募者登録 2</a>
                                 </li>
                             </ul>
                         </li>

@@ -246,6 +246,7 @@ export default function FormRegisterScreen() {
                                             <LabelComponent label={"応募日 "} required={false} />
                                             <DatePickerComponent
                                                 required={true}
+                                                placeholder={'応募日を入力してください'}
                                                 name={"application_date"} />
                                             <MdEvent className="icon-date"/>
                                         </div>

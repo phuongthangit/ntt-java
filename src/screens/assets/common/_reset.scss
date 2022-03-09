@@ -323,16 +323,25 @@ select[readonly] {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .breadcrumb-item {
-    font-weight: 600;
-    color: #000000 !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-weight: 900;
+	font-size: 20px;
+    color: #fff !important;
     cursor: pointer;
 
     +.breadcrumb-item {
         &::before {
             float: none;
-            content: '>';
+            content: '/';
+			color: #fff;
         }
     }
+}
+.icon-justify{
+	width: 30px;
+	height: 30px;
 }
 .position-relative{
 	position: relative;

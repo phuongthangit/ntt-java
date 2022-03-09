@@ -5,7 +5,7 @@ import moment from "moment";
 
 export default function DatePickerComponent(props) {
 
-    const { name } = props;
+    const { name, placeholder } = props;
 
     const methods = useForm({
         mode: 'all',
@@ -24,6 +24,7 @@ export default function DatePickerComponent(props) {
                 <DatePicker
                     dateFormat="dd/MM/yyyy"
                     className="form-control"
+                    placeholderText={placeholder}
                     name={name}
                     autoComplete="off"
                     selected={value ? moment(value).toDate() : value}
