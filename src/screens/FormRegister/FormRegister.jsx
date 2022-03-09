@@ -5,6 +5,7 @@ import LabelComponent from "../../components/Label/LabelComponent";
 import RadioButtonComponent from "../../components/RadioButton/RadioButton";
 import SelectBoxComponent from "../../components/SelectBox/SelectBox";
 import TextAreaFlexComponent from "../../components/TextArea/TextAreaFlex";
+import { MdAttachFile } from "react-icons/md";
 
 export default function FormRegisterScreen() {
 
@@ -12,8 +13,28 @@ export default function FormRegisterScreen() {
     const year = [2022, 2021, 2020, 2019, 2018];
     const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
+    /**
+     * preview image
+     * @param {*} setState 
+     */
+     const _onUpload = () => {
+        let input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = () => {
+            let files = Array.from(input.files);
+            let reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+
+            reader.onloadend = function (e) {
+                
+            }
+        }
+        input.click();
+    }
+
     return (
-        <main className="warp">
+        <main className="warp form-register">
             <div className="mb-4">
                 <div className="card mt-4">
                     <div className="card-header">
@@ -256,13 +277,14 @@ export default function FormRegisterScreen() {
                                                         name={"file-title"}
                                                         required={false} />
                                                 </div>
-                                                <div className="col-lg-12">
-                                                    <div className="form-control">アップロードするファイルを選択してください</div>
+                                                <div className="col-lg-12 position-relative">
+                                                    <div onClick={_onUpload} className="form-upload form-control d-flex justify-content-between">アップロードするファイルを選択してください<MdAttachFile className="upload-file-icon"/></div>
+                                                    
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-12 d-flex justify-content-end">
-                                                    <button type="submit" className="btn btn-primary btn-sm me-3 mb-3 mt-3">アップロード</button>
+                                                <div onClick={_onUpload} className="col-12 d-flex justify-content-end">
+                                                    <button type="button" className="btn btn-primary btn-sm mb-3 mt-3">アップロード</button>
                                                 </div>
                                             </div>
                                         </div>

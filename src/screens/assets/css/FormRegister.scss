@@ -1,0 +1,11 @@
+.form-register{
+    .form-upload{
+        cursor: pointer;
+    }
+    .upload-file-icon{
+        width: 25px;
+        height: 25px;
+        color: $color-main;
+        transform: rotate(45deg)
+    }
+}
