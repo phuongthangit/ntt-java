@@ -130,6 +130,8 @@ export default function FormRegisterScreen() {
                                                     label={"電話番号"}
                                                     placeholder={"電話番号は半角数字にしてください。"}
                                                     name={"phone"}
+                                                    pattern = {new RegExp('^[0-9]{10,11}$')}
+                                                    message = {"話番号は10桁か11桁の数値で入力してください。"}
                                                     required={false} />
                                             </div>
                                         </div>
@@ -140,6 +142,8 @@ export default function FormRegisterScreen() {
                                                     label={"メールアドレス"}
                                                     placeholder={"メールアドレスを入力してください"}
                                                     name={"email"}
+                                                    pattern = {new RegExp('^[\\w\\d._+-]+@[\\w\\d_-]+\\.[\\w\\d._-]+$')}
+                                                    message = {"有効なメールアドレスを入力してください。"}
                                                     required={false} />
                                             </div>
                                         </div>

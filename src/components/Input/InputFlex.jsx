@@ -5,7 +5,7 @@ import { replaceString } from '../../utils/helper';
 
 export default function InputFlexComponent(props) {
 
-    const { label, placeholder, maxLength, minLength, required, name, type } = props;
+    const { label, placeholder, maxLength, minLength, required, name, type, pattern, message } = props;
 
     const methods = useForm({
         mode: 'all',
@@ -60,6 +60,10 @@ export default function InputFlexComponent(props) {
                                 value: minLength,
                                 message: replaceString(Message.TEXT.MIN_LENGTH, [label, minLength]),
                             },
+                            pattern: {
+                                value: pattern,
+                                message: message
+                            }
                         }
                     )}
                     onBlur={(e) => { _onBlur(e.currentTarget.name, e.currentTarget.value) }}
@@ -76,5 +80,6 @@ InputFlexComponent.defaultProps = {
     required: false,
     type: "text",
     maxLength: 9999999,
-    minLength: 0
+    minLength: 0,
+    pattern: "",
 };
