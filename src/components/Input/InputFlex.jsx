@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { FormFeedback } from 'reactstrap';
+import Message from '../../message/message';
+import { replaceString } from '../../utils/helper';
 
 export default function InputFlexComponent(props) {
 
@@ -26,15 +28,18 @@ export default function InputFlexComponent(props) {
     return (
         <>
             <div className="form-group form-inline">
-                <div className="form-label form-title">
-                    <label>{label}</label>
-                    {
-                        required &&
-                        <span className="required ml-3">
-                            必須
-                        </span>
-                    }
-                </div>
+                {
+                    label &&
+                    <div className="form-label form-title">
+                        <label>{label}</label>
+                        {
+                            required &&
+                            <span className="required ml-3">
+                                必須
+                            </span>
+                        }
+                    </div>
+                }
                 <input
                     required={required}
                     type={type}
@@ -45,15 +50,15 @@ export default function InputFlexComponent(props) {
                         {
                             required: {
                                 value: required,
-                                message: "Bắt buộc",
+                                message: replaceString(Message.TEXT.REQUIRED, [label]),
                             },
                             maxLength: {
                                 value: maxLength,
-                                message: "Max",
+                                message: replaceString(Message.TEXT.MAX_LENGTH, [label, maxLength]),
                             },
                             minLength: {
                                 value: minLength,
-                                message: "min",
+                                message: replaceString(Message.TEXT.MIN_LENGTH, [label, minLength]),
                             },
                         }
                     )}
@@ -61,7 +66,7 @@ export default function InputFlexComponent(props) {
                 />
             </div>
             {errors[name] && (
-                <FormFeedback style={{paddingLeft:'170px'}} className="d-block">{errors[name].message}</FormFeedback>
+                <FormFeedback style={{ paddingLeft: '170px' }} className="d-block">{errors[name].message}</FormFeedback>
             )}
         </>
     )

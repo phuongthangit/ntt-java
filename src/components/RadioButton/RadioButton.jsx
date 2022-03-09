@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form';
+import Message from '../../message/message';
+import { replaceString } from '../../utils/helper';
 
 export default function RadioButtonComponent(props) {
 
@@ -27,7 +29,7 @@ export default function RadioButtonComponent(props) {
                     {
                         required: {
                             value: required,
-                            message: "Bắt buộc",
+                            message: replaceString(Message.TEXT.REQUIRED, [label]),
                         }
                     }
                 )}

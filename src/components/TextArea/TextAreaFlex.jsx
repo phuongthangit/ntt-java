@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { FormFeedback } from 'reactstrap';
+import Message from '../../message/message';
+import { replaceString } from '../../utils/helper';
 
 export default function TextAreaFlexComponent(props) {
 
@@ -44,15 +46,15 @@ export default function TextAreaFlexComponent(props) {
                         {
                             required: {
                                 value: required,
-                                message: "Bắt buộc",
+                                message: replaceString(Message.TEXT.REQUIRED, [label]),
                             },
                             maxLength: {
                                 value: maxLength,
-                                message: "Max",
+                                message: replaceString(Message.TEXT.MAX_LENGTH, [label, maxLength]),
                             },
                             minLength: {
                                 value: minLength,
-                                message: "min",
+                                message: replaceString(Message.TEXT.MIN_LENGTH, [label, minLength]),
                             },
                         }
                     )}

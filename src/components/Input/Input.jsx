@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { FormFeedback } from 'reactstrap';
+import Message from '../../message/message';
+import { replaceString } from '../../utils/helper';
 
 export default function InputComponent(props) {
 
@@ -28,9 +30,12 @@ export default function InputComponent(props) {
     return (
         <>
             <div className="form-group form-inline">
-                <div className="form-label">
-                    <label>{label}</label>
-                </div>
+                {
+                    label &&
+                    <div className="form-label">
+                        <label>{label}</label>
+                    </div>
+                }
                 <input
                     required={required}
                     type={type}
@@ -41,15 +46,15 @@ export default function InputComponent(props) {
                         {
                             required: {
                                 value: required,
-                                message: "hihi",
+                                message: replaceString(Message.TEXT.REQUIRED, [label]),
                             },
                             maxLength: {
                                 value: maxLength,
-                                // message: replaceString(Message.TEXT.MAX_LENGTH, ["Tiêu đề", Validation.TEXT.MAX_LENGTH]),
+                                message: replaceString(Message.TEXT.MAX_LENGTH, [label, maxLength]),
                             },
                             minLength: {
                                 value: minLength,
-                                // message: replaceString(Message.TEXT.MIN_LENGTH, ["Tiêu đề", Validation.TEXT.MIN_LENGTH]),
+                                message: replaceString(Message.TEXT.MIN_LENGTH, [label, minLength]),
                             },
                         }
                     )}
@@ -57,7 +62,7 @@ export default function InputComponent(props) {
                 />
             </div>
             {errors[name] && (
-                <FormFeedback className="d-block" style={{paddingLeft:'45px'}}>{errors[name].message}</FormFeedback>
+                <FormFeedback className="d-block" style={{ paddingLeft: '45px' }}>{errors[name].message}</FormFeedback>
             )}
         </>
     )

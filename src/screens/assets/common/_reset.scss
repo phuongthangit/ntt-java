@@ -306,13 +306,19 @@ select[readonly] {
 		}
 	}
 }
-.box-content {
-    padding: 15px;
+.card-header{
+	background-color: #eeeeee !important;
+	padding: 12px 20px;
+	font-weight: 600;
+}
+.card-body{
+	padding: 1.25rem;
+}
+.card {
     border-radius: 5px;
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
 .breadcrumb-item {
     font-weight: 600;
     color: #000000 !important;

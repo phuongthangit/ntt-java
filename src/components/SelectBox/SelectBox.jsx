@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 
 export default function SelectBoxComponent(props) {
-    const { label, data, disabled, required, name } = props;
+    const { data, disabled, name } = props;
 
     const methods = useForm({
         mode: 'all',
@@ -21,15 +21,17 @@ export default function SelectBoxComponent(props) {
                 
             )}
         >
-            <option value="0">2022</option>
-            <option value="1">2021</option>
-            <option value="2">2019</option>
-            <option value="0">2022</option>
-            <option value="1">2021</option>
-            <option value="2">2019</option>
-            <option value="0">2022</option>
-            <option value="1">2021</option>
-            <option value="2">2019</option>
+            {
+                data?.length > 0 && data.map((item,idx) =>{
+                    return(
+                        <option key={idx} value={idx}>{item}</option>
+                    )
+                })
+            }
         </select>
     )
 }
+
+SelectBoxComponent.defaultProps = {
+    disabled: false
+};
