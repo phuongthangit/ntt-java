@@ -13,4 +13,26 @@
         height: 25px;
         color: $color-main;
     }
+    .date-of-birth{
+        .form-select{
+            max-width: 150px;
+            margin-right: 15px;
+        }
+    }
+    .icon-date{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 992px) {
+        .col-left{
+            order: 2;
+        }
+        .col-left{
+            order: 1;
+        }
+    }
 }

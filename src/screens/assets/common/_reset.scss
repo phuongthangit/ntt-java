@@ -65,6 +65,9 @@ h5{
 h6{
     font-size: 1em;
 }
+.btn-sm{
+	padding: 0.5rem 1rem;
+}
 .text-error {
     color: #ff0000;
     margin: .5rem 0 0 0;
@@ -366,7 +369,7 @@ form {
 	.form-title {
         font-weight: 600;
         color: $color-label;
-		width: 200px;
+		min-width: 200px;
     }
 
     .form-control {

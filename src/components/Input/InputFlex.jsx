@@ -66,7 +66,7 @@ export default function InputFlexComponent(props) {
                 />
             </div>
             {errors[name] && (
-                <FormFeedback style={{ paddingLeft: '170px' }} className="d-block">{errors[name].message}</FormFeedback>
+                <FormFeedback style={{ paddingLeft: '200px' }} className="d-block">{errors[name].message}</FormFeedback>
             )}
         </>
     )

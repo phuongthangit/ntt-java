@@ -5,7 +5,7 @@ import LabelComponent from "../../components/Label/LabelComponent";
 import RadioButtonComponent from "../../components/RadioButton/RadioButton";
 import SelectBoxComponent from "../../components/SelectBox/SelectBox";
 import TextAreaFlexComponent from "../../components/TextArea/TextAreaFlex";
-import { MdAttachFile, MdCloudUpload } from "react-icons/md";
+import { MdAttachFile, MdCloudUpload, MdEvent } from "react-icons/md";
 
 export default function FormRegisterScreen() {
 
@@ -51,12 +51,12 @@ export default function FormRegisterScreen() {
                     <div className="card-body">
                         <form action="">
                             <div className="row">
-                                <div className="col-lg-8 col-md-12">
+                                <div className="col-lg-8 col-md-12 col-left">
                                     <div className="row mb-3">
                                         <div className="col-lg-12">
                                             <LabelComponent label={"名前"} required={true} />
                                         </div>
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 mb-3">
                                             <InputComponent
                                                 type={"text"}
                                                 label={"姓"}
@@ -77,7 +77,7 @@ export default function FormRegisterScreen() {
                                         <div className="col-lg-12">
                                             <LabelComponent label={"ふりがな"} required={true} />
                                         </div>
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 mb-3">
                                             <InputComponent
                                                 type={"text"}
                                                 label={"せい "}
@@ -118,7 +118,7 @@ export default function FormRegisterScreen() {
                                     </div>
                                     <hr />
                                     <div className="row">
-                                        <div className="col-lg-12 d-flex">
+                                        <div className="col-lg-12 d-flex date-of-birth">
                                             <LabelComponent label={"性別 "} required={true} />
                                             <SelectBoxComponent
                                                 label={"男性"}
@@ -234,19 +234,20 @@ export default function FormRegisterScreen() {
                                         <div className="col-12">
                                             <InputFlexComponent
                                                 type={"email"}
-                                                label={"メールアドレス"}
-                                                placeholder={"メールアドレスを入力してください"}
-                                                name={"mail_address"}
+                                                label={"職種"}
+                                                placeholder={"職種を入力してください"}
+                                                name={"job_category"}
                                                 required={true} />
                                         </div>
                                     </div>
                                     <hr />
                                     <div className="row">
-                                        <div className="col-lg-12 d-flex">
+                                        <div className="col-lg-12 d-flex position-relative">
                                             <LabelComponent label={"応募日 "} required={false} />
                                             <DatePickerComponent
                                                 required={true}
                                                 name={"application_date"} />
+                                            <MdEvent className="icon-date"/>
                                         </div>
                                     </div>
                                     <hr />
@@ -271,7 +272,7 @@ export default function FormRegisterScreen() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-4 col-md-12">
+                                <div className="col-lg-4 col-md-12 col-right mb-5">
                                     <div className="card">
                                         <div className="card-body">
                                             <div className="row mb-3">

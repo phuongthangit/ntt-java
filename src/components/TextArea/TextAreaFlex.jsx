@@ -62,7 +62,7 @@ export default function TextAreaFlexComponent(props) {
                 />
             </div>
             {errors[name] && (
-                <FormFeedback className="d-block" style={{ paddingLeft: '170px' }}>{errors[name].message}</FormFeedback>
+                <FormFeedback className="d-block" style={{ paddingLeft: '200px' }}>{errors[name].message}</FormFeedback>
             )}
         </>
     )
