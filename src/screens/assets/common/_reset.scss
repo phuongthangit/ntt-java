@@ -382,11 +382,13 @@ form {
 		width: 45px;
 		word-break: break-all;
     	white-space: pre-line;
+		position: relative;
     }
 	.form-title {
         font-weight: 600;
         color: $color-label;
 		min-width: 200px;
+		line-height: 42px;
     }
 
     .form-control {
@@ -425,6 +427,7 @@ form {
 		border-radius: 0.25rem;
 		margin-left: 5px;
 		position: absolute;
+		top: 10px;
     }
 
     

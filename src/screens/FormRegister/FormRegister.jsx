@@ -50,19 +50,19 @@ export default function FormRegisterScreen() {
                     <div className="card-header">
                         <div className="row">
                             <div className="col-8">
-                                <h4 className="card-title">応募者登録フォーム</h4>
+                                <h4 className="card-title">会員登録</h4>
                             </div>
-                            <div className="col-4 d-flex">
+                            {/* <div className="col-4 d-flex">
                                 <h4 className="card-title">関連資料</h4>
                                 <MdCloudUpload className="mx-3 upload-icon" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="card-body">
                         <FormProvider {...methods}>
                             <form action="">
                                 <div className="row">
-                                    <div className="col-lg-8 col-md-12 col-left">
+                                    <div className="col-lg-12 col-md-12 col-left">
                                         <div className="row mb-3">
                                             <div className="col-lg-12">
                                                 <LabelComponent label={"名前"} required={true} />
@@ -105,8 +105,8 @@ export default function FormRegisterScreen() {
                                                     required={true} />
                                             </div>
                                         </div>
-                                        <hr />
-                                        <div className="row">
+                                        
+                                        <div className="row mb-3">
                                             <div className="col-lg-6">
                                                 <div className="form-group d-flex flex-wrap">
                                                     <LabelComponent label={"性別"} required={true} />
@@ -127,25 +127,28 @@ export default function FormRegisterScreen() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <hr />
-                                        <div className="row">
+                                        
+                                        <div className="row mb-3">
                                             <div className="col-lg-12 d-flex date-of-birth">
                                                 <LabelComponent label={"生年月日"} required={true} />
                                                 <SelectBoxComponent
                                                     label={"男性"}
                                                     data={year}
-                                                    name="year" />
+                                                    name="year"
+                                                    unit={"年"} />
                                                 <SelectBoxComponent
                                                     label={"男性"}
                                                     data={month}
-                                                    name="month" />
+                                                    name="month"
+                                                    unit={"月"} />
                                                 <SelectBoxComponent
                                                     label={"男性"}
                                                     data={day}
-                                                    name="day" />
+                                                    name="day"
+                                                    unit={"日"} />
                                             </div>
                                         </div>
-                                        <hr />
+                                        
                                         <div className="row mb-3">
                                             <div className="col-12">
                                                 <InputFlexComponent
@@ -185,17 +188,23 @@ export default function FormRegisterScreen() {
                                             </div>
                                         </div>
                                         <div className="row mb-3">
-                                            <div className="col-lg-12 d-flex position-relative">
+                                            <div className="col-lg-12 d-flex date-of-birth">
                                                 <LabelComponent label={"入社日"} required={true} />
-                                                <DatePickerComponent
-                                                    required={true}
-                                                    placeholder={'入社日を入力してください'}
-                                                    name={"application_date"}
-                                                    label={"入社日"} />
-                                                <MdEvent className="icon-date" />
-                                                {errors.application_date && (
-                                                    <FormFeedback className="d-block" style={{ paddingLeft: '200px' }}>{errors.application_date.message}</FormFeedback>
-                                                )}
+                                                <SelectBoxComponent
+                                                    label={"男性"}
+                                                    data={year}
+                                                    name="year"
+                                                    unit={"年"} />
+                                                <SelectBoxComponent
+                                                    label={"男性"}
+                                                    data={month}
+                                                    name="month"
+                                                    unit={"月"} />
+                                                <SelectBoxComponent
+                                                    label={"男性"}
+                                                    data={day}
+                                                    name="day"
+                                                    unit={"日"} />
                                             </div>
                                         </div>
                                         <div className="row mb-3">
@@ -228,7 +237,7 @@ export default function FormRegisterScreen() {
                                                     required={false} />
                                             </div>
                                         </div>
-                                        <hr />
+                                        
                                         <div className="row mb-3">
                                             <div className="col-lg-12">
                                                 <TextAreaFlexComponent
@@ -250,7 +259,7 @@ export default function FormRegisterScreen() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-12 col-right mb-5">
+                                    {/* <div className="col-lg-4 col-md-12 col-right mb-5">
                                         <div className="card">
                                             <div className="card-body">
                                                 <div className="row mb-3">
@@ -276,7 +285,7 @@ export default function FormRegisterScreen() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </form>
                         </FormProvider>

@@ -26,8 +26,8 @@ export default function Header(props) {
                     >
                         <span className="navbar-toggler-icon" />
                     </button>
-                    <div className="collapse navbar-collapse flex justify-content-between">
-                        <nav aria-label="breadcrumb mt-3">
+                    <div className="collapse navbar-collapse flex justify-content-end">
+                        {/* <nav aria-label="breadcrumb mt-3">
                             <ol className="breadcrumb breadcrumb-ol">
                                 <li className="breadcrumb-item">
                                     <span className="breadcrumb-hover">
@@ -38,7 +38,7 @@ export default function Header(props) {
                                     応募者登録
                                 </li>
                             </ol>
-                        </nav>
+                        </nav> */}
                         <div className="dropdown">
                             <div className="user-menu d-flex">
                                 <div className="user-name text-end me-3 d-flex align-items-center">

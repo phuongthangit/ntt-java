@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 
 export default function SelectBoxComponent(props) {
-    const { data, disabled, name } = props;
+    const { data, disabled, name, unit } = props;
 
     const methods = useForm({
         mode: 'all',
@@ -13,6 +13,7 @@ export default function SelectBoxComponent(props) {
      * render template
      */
     return (
+        <>
         <select
             className="form-control form-select"
             disabled={disabled}
@@ -29,6 +30,10 @@ export default function SelectBoxComponent(props) {
                 })
             }
         </select>
+        {
+            unit && <span className='unit' style={{fontWeight:'700'}}>{unit}</span>
+        }
+        </>
     )
 }
 
