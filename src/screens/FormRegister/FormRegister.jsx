@@ -1,14 +1,13 @@
-import DatePickerComponent from "../../components/DatePicker/DatePicker";
+//component
 import InputComponent from "../../components/Input/Input";
 import InputFlexComponent from "../../components/Input/InputFlex";
 import LabelComponent from "../../components/Label/LabelComponent";
 import RadioButtonComponent from "../../components/RadioButton/RadioButton";
 import SelectBoxComponent from "../../components/SelectBox/SelectBox";
 import TextAreaFlexComponent from "../../components/TextArea/TextAreaFlex";
-import { MdAttachFile, MdCloudUpload, MdEvent } from "react-icons/md";
 
+//packet
 import { useForm, FormProvider } from 'react-hook-form';
-import { FormFeedback } from 'reactstrap';
 
 export default function FormRegisterScreen() {
 
@@ -16,32 +15,11 @@ export default function FormRegisterScreen() {
         mode: 'all',
         reValidateMode: 'all',
     });
-    const { formState: { errors } } = methods;
-    console.log(errors);
 
     const roomList = ['部署1', '部署2', '部署3'];
     const year = [2022, 2021, 2020, 2019, 2018];
     const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
-    /**
-     * preview image
-     * @param {*} setState 
-     */
-    const _onUpload = () => {
-        let input = document.createElement('input');
-        input.type = 'file';
-        input.onchange = () => {
-            let files = Array.from(input.files);
-            let reader = new FileReader();
-            reader.readAsDataURL(files[0]);
-
-            reader.onloadend = function (e) {
-
-            }
-        }
-        input.click();
-    }
 
     return (
         <main className="warp form-register">
@@ -52,10 +30,6 @@ export default function FormRegisterScreen() {
                             <div className="col-8">
                                 <h4 className="card-title">会員登録</h4>
                             </div>
-                            {/* <div className="col-4 d-flex">
-                                <h4 className="card-title">関連資料</h4>
-                                <MdCloudUpload className="mx-3 upload-icon" />
-                            </div> */}
                         </div>
                     </div>
                     <div className="card-body">
@@ -259,33 +233,6 @@ export default function FormRegisterScreen() {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* <div className="col-lg-4 col-md-12 col-right mb-5">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <div className="row mb-3">
-                                                    <div className="col-lg-12">
-                                                        <LabelComponent label={"資料追加 "} />
-                                                    </div>
-                                                    <div className="col-lg-12 mb-3">
-                                                        <InputComponent
-                                                            type={"text"}
-                                                            placeholder={"簡単な説明"}
-                                                            name={"file-title"}
-                                                            required={false} />
-                                                    </div>
-                                                    <div className="col-lg-12 position-relative">
-                                                        <div onClick={_onUpload} className="form-upload form-control d-flex justify-content-between">アップロードするファイルを選択してください<MdAttachFile className="upload-file-icon" /></div>
-
-                                                    </div>
-                                                </div>
-                                                <div className="row">
-                                                    <div onClick={_onUpload} className="col-12 d-flex justify-content-end">
-                                                        <button type="button" className="btn btn-primary btn-sm mb-3 mt-3">アップロード</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </form>
                         </FormProvider>

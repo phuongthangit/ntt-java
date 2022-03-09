@@ -1,5 +1,9 @@
+//packet
 import { Link } from "react-router-dom";
+
+//icon
 import logo from "../../assets/img/logo.png";
+
 export default function Sidebar(props) {
 
     const { activeSidebar } = props;
@@ -12,15 +16,14 @@ export default function Sidebar(props) {
                 <div className="sidebar-header">
                     <div className="d-flex justify-content-center">
                         <div className="logo">
-                            <a href="#">
+                            <Link to="/">
                                 <img src={logo} alt="Logo" srcSet="" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="sidebar-menu">
                     <ul className="menu">
-                        <li className="sidebar-title">メニュー</li>
                         <li className="sidebar-item  ">
                             <Link to="#" className="sidebar-link">
                                 <span>会員管理</span>
@@ -33,9 +36,6 @@ export default function Sidebar(props) {
                         </li>
                     </ul>
                 </div>
-                <button className="sidebar-toggler btn x">
-                    <i data-feather="x" />
-                </button>
             </div>
         </div>
     )
