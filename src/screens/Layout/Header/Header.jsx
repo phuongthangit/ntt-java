@@ -42,7 +42,7 @@ export default function Header(props) {
                         <div className="dropdown">
                             <div className="user-menu d-flex">
                                 <div className="user-name text-end me-3 d-flex align-items-center">
-                                    <h4 className="mb-0">渡辺 様</h4>
+                                    <h4 className="mb-0">山田　太郎</h4>
                                 </div>
                                 <div className="user-img d-flex align-items-center">
                                     <div className="avatar avatar-md">

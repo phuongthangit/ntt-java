@@ -130,6 +130,11 @@ select[readonly] {
 		}
 	}
 }
+.avatar {
+	img{
+		border-radius: 50%;
+	}
+}
 .sidebar-wrapper {
 	width: 300px;
 	height: 100vh;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 export default function Sidebar(props) {
 
@@ -21,22 +22,14 @@ export default function Sidebar(props) {
                     <ul className="menu">
                         <li className="sidebar-title">メニュー</li>
                         <li className="sidebar-item  ">
-                            <a href="#" className="sidebar-link">
-                                <span>ホームページ</span>
-                            </a>
+                            <Link to="#" className="sidebar-link">
+                                <span>会員管理</span>
+                            </Link>
                         </li>
-                        <li className="sidebar-item  has-sub active">
-                            <a href="#" className="sidebar-link">
-                                <span>応募者登録</span>
-                            </a>
-                            <ul className="submenu ">
-                                <li className="submenu-item ">
-                                    <a href="#">応募者登録 1</a>
-                                </li>
-                                <li className="submenu-item ">
-                                    <a href="#">応募者登録 2</a>
-                                </li>
-                            </ul>
+                        <li className="sidebar-item active">
+                            <Link to="#" className="sidebar-link">
+                                <span>会員登録</span>
+                            </Link>
                         </li>
                     </ul>
                 </div>
