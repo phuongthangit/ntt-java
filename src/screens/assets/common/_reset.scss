@@ -79,6 +79,9 @@ select[readonly] {
 .react-datepicker__triangle::before, .react-datepicker__triangle::after{
 	display: none;
 }
+.breadcrumb-ol{
+	margin-bottom: 0px !important;
+}
 
 /* scroolbar */
 ::-webkit-scrollbar {
