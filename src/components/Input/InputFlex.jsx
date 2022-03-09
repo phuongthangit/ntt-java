@@ -1,4 +1,4 @@
-export default function InputComponent(props) {
+export default function InputFlexComponent(props) {
 
     const { label, placeholder, maxLength, minLength, required, name, type } = props;
     /**
@@ -6,8 +6,14 @@ export default function InputComponent(props) {
      */
     return (
         <div className="form-group form-inline">
-            <div className="form-label">
+            <div className="form-label form-title">
                 <label>{label}</label>
+                {
+                    required &&
+                    <span className="required ml-3">
+                        必須
+                    </span>
+                }
             </div>
             <input
                 required={required}

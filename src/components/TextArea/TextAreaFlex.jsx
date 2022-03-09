@@ -1,12 +1,12 @@
-export default function TextAreaComponent(props) {
+export default function TextAreaFlexComponent(props) {
 
     const { label, placeholder, maxLength, minLength, required, name, rows } = props;
     /**
      * render template
      */
     return (
-        <div className="form-group">
-            <div className="form-label">
+        <div className="form-group form-inline">
+            <div className="form-label form-title">
                 <label>{label}</label>
                 {
                     required && <span className="required ml-3">

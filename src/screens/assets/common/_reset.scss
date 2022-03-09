@@ -2,7 +2,7 @@ html,body{
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     font-family: $font-main;
     color: $color-text;
@@ -99,7 +99,7 @@ select[readonly] {
 	margin-left: 300px;
 	padding: 2rem;
 	#main-content {
-		padding: 2rem;
+		padding: 0 2rem;
 	}
 }
 #main {
@@ -327,13 +327,18 @@ select[readonly] {
 }
 /* form */
 form {
+	.form-inline {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		align-items: center;
+	}
     .form-group{
-        margin-top: 20px;
         &__radio{
             display: flex;
             align-items: center;
             padding: 0 10px;
-            font-weight: 700;
+            font-weight: 600;
             label{
                 padding: 0 10px;
             }
@@ -343,8 +348,16 @@ form {
         }
     }
     .form-label {
-        font-weight: 700;
+        font-weight: 600;
         color: $color-label;
+		width: 45px;
+		word-break: break-all;
+    	white-space: pre-line;
+    }
+	.form-title {
+        font-weight: 600;
+        color: $color-label;
+		width: 200px;
     }
 
     .form-control {
@@ -374,9 +387,15 @@ form {
         }
     }
     .required {
-        color: red;
-        display: inline-block;
-        position: absolute;
+		color: #fff;
+		font-size: 11px;
+		background-color: red;
+		padding: 1px 3px;
+		line-height: 1.2;
+		display: inline-block;
+		border-radius: 0.25rem;
+		margin-left: 5px;
+		position: absolute;
     }
 
     

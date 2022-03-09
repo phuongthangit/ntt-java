@@ -5,12 +5,12 @@ export default function LabelComponent(props) {
      * render template
      */
     return (
-        <div className="form-label">
-            <label>{label}:</label>
+        <div className="form-label form-title">
+            <label>{label}</label>
             {
                 required &&
                 <span className="required ml-3">
-                    *
+                    必須
                 </span>
             }
         </div>
