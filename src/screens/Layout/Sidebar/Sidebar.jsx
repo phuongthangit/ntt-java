@@ -1,10 +1,37 @@
+import { useEffect, useState } from "react";
 import logo from "../../assets/img/logo.png";
 export default function Sidebar(props) {
+
+    const [activeSidebar, setActiveSidebar] = useState(true);
+
+    /**
+     * handleResize
+     */
+    const handleResize = () => {
+        if (window.innerWidth >= 1280) {
+            setActiveSidebar(true);
+        }else{
+            setActiveSidebar(false);
+        }
+    }
+
+    /**
+     * init size
+     */
+    useEffect(() => {
+        handleResize();
+        window.addEventListener("resize", () => {
+            handleResize();
+        });
+        return () => {
+            window.removeEventListener("resize", function () { });
+        }
+    }, []);
     /**
      * render template
      */
     return (
-        <div id="sidebar" className="active">
+        <div id="sidebar" className={`${activeSidebar ? 'active' : ''}`}>
             <div className="sidebar-wrapper active">
                 <div className="sidebar-header">
                     <div className="d-flex justify-content-center">

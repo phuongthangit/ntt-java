@@ -5,7 +5,7 @@ import LabelComponent from "../../components/Label/LabelComponent";
 import RadioButtonComponent from "../../components/RadioButton/RadioButton";
 import SelectBoxComponent from "../../components/SelectBox/SelectBox";
 import TextAreaFlexComponent from "../../components/TextArea/TextAreaFlex";
-import { MdAttachFile } from "react-icons/md";
+import { MdAttachFile, MdCloudUpload } from "react-icons/md";
 
 export default function FormRegisterScreen() {
 
@@ -18,7 +18,7 @@ export default function FormRegisterScreen() {
      * preview image
      * @param {*} setState 
      */
-     const _onUpload = () => {
+    const _onUpload = () => {
         let input = document.createElement('input');
         input.type = 'file';
         input.onchange = () => {
@@ -27,7 +27,7 @@ export default function FormRegisterScreen() {
             reader.readAsDataURL(files[0]);
 
             reader.onloadend = function (e) {
-                
+
             }
         }
         input.click();
@@ -38,7 +38,15 @@ export default function FormRegisterScreen() {
             <div className="mb-4">
                 <div className="card mt-4">
                     <div className="card-header">
-                        <h3 className="card-title">応募者登録フォーム</h3>
+                        <div className="row">
+                            <div className="col-8">
+                                <h4 className="card-title">応募者登録フォーム</h4>
+                            </div>
+                            <div className="col-4 d-flex">
+                                <h4 className="card-title">関連資料</h4>
+                                <MdCloudUpload className="mx-3 upload-icon"/>
+                            </div>
+                        </div>
                     </div>
                     <div className="card-body">
                         <form action="">
@@ -263,7 +271,7 @@ export default function FormRegisterScreen() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-lg-4 col-md-12">
                                     <div className="card">
                                         <div className="card-body">
                                             <div className="row mb-3">
@@ -278,8 +286,8 @@ export default function FormRegisterScreen() {
                                                         required={false} />
                                                 </div>
                                                 <div className="col-lg-12 position-relative">
-                                                    <div onClick={_onUpload} className="form-upload form-control d-flex justify-content-between">アップロードするファイルを選択してください<MdAttachFile className="upload-file-icon"/></div>
-                                                    
+                                                    <div onClick={_onUpload} className="form-upload form-control d-flex justify-content-between">アップロードするファイルを選択してください<MdAttachFile className="upload-file-icon" /></div>
+
                                                 </div>
                                             </div>
                                             <div className="row">
