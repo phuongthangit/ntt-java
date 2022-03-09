@@ -11,7 +11,7 @@ export default function DatePickerComponent(props) {
         mode: 'all',
         reValidateMode: 'all',
     });
-    const { register, control, formState: { errors } } = methods;
+    const { control } = methods;
     return (
         <Controller
             control={control}
@@ -29,7 +29,6 @@ export default function DatePickerComponent(props) {
                     selected={value ? moment(value).toDate() : value}
                     onChange={onChange}
                     onBlur={onBlur}
-
                 />
             )}
         />

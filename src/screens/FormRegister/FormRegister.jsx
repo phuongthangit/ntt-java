@@ -88,15 +88,18 @@ export default function FormRegisterScreen() {
                                             <SelectBoxComponent
                                                 label={"男性"}
                                                 defaultChecked={true}
-                                                required={true} />
+                                                required={true}
+                                                name="year" />
                                             <SelectBoxComponent
                                                 label={"男性"}
                                                 defaultChecked={true}
-                                                required={true} />
+                                                required={true}
+                                                name="month"  />
                                             <SelectBoxComponent
                                                 label={"男性"}
                                                 defaultChecked={true}
-                                                required={true} />
+                                                required={true}
+                                                name="day"  />
                                         </div>
                                     </div>
                                 </div>
