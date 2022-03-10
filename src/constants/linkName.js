@@ -1,5 +1,5 @@
 const linkName = {
-    FORM_REGISTER: '/',
-    LIST_USER: '/list-user',
+    FORM_REGISTER: '/form-register',
+    LIST_USER: '/',
 };
 export default linkName;

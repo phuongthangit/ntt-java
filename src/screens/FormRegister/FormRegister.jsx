@@ -6,11 +6,15 @@ import RadioButtonComponent from "../../components/RadioButton/RadioButton";
 import SelectBoxComponent from "../../components/SelectBox/SelectBox";
 import TextAreaFlexComponent from "../../components/TextArea/TextAreaFlex";
 
+import { useNavigate } from 'react-router-dom';
+
 //packet
 import { useForm, FormProvider } from 'react-hook-form';
+import LinkName from "../../constants/linkName";
 
 export default function FormRegisterScreen() {
 
+    let navigate = useNavigate();
     const methods = useForm({
         mode: 'all',
         reValidateMode: 'all',
@@ -21,13 +25,17 @@ export default function FormRegisterScreen() {
     const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
+    const _onNavigate = () => {
+        navigate(LinkName.LIST_USER);
+    }
+
     return (
         <main className="warp form-register">
             <div className="mb-4">
                 <div className="card mt-4">
                     <div className="card-header">
                         <div className="row">
-                            <div className="col-8">
+                            <div className="col-12">
                                 <h4 className="card-title">会員登録</h4>
                             </div>
                         </div>
@@ -232,6 +240,7 @@ export default function FormRegisterScreen() {
                                                 <button type="submit" className="btn btn-primary btn-sm me-3 mb-3 mt-3">保存</button>
                                                 <button
                                                     type="button"
+                                                    onClick={_onNavigate}
                                                     className="btn btn-secondary btn-sm mb-3 mt-3"
                                                 >キャンセル</button>
                                             </div>

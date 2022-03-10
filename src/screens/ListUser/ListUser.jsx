@@ -60,10 +60,10 @@ export default function ListUserScreen() {
      * get page count
      */
     useEffect(() => {
-        if(userList){
+        if (userList) {
             setPageCount(Math.ceil(constants.userList.length / pageLimit));
         }
-    },[userList]);
+    }, [userList]);
 
     /**
      * set user when change page
@@ -83,15 +83,22 @@ export default function ListUserScreen() {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-content">
+                                    <div className="card-header">
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <h4 className="card-title">会員一覧</h4>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className="card-body">
                                         <div className="d-flex justify-content-end">
-                                            <button onClick={_onNavigate} type="button" className="btn btn-primary btn-sm">会員登録 <MdAddCircle className="icon-add mx-1" /></button>
+                                            <button onClick={_onNavigate} type="button" className="btn btn-primary btn-sm">新規登録 <MdAddCircle className="icon-add mx-1" /></button>
                                         </div>
                                     </div>
                                     <div className="row mx-0">
                                         <div className="col-12 px-0">
-                                            <div class="table-scroll mb-3 mx-3">
-                                                <table class="table normal-table table-list-user">
+                                            <div className="table-scroll mb-3 mx-3">
+                                                <table className="table normal-table table-list-user">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" className="column-extra-small">
@@ -191,7 +198,7 @@ export default function ListUserScreen() {
                                                         {
                                                             userList.length > 0 && userList.map((item) => {
                                                                 return (
-                                                                    <tr>
+                                                                    <tr key={item.no}>
                                                                         <td>{item.no}</td>
                                                                         <td>{item.fullname}</td>
                                                                         <td>{typeCode.USER.GENDER_MAPPING[item.gender]}</td>

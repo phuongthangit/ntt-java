@@ -11,8 +11,6 @@ export default function Sidebar(props) {
 
     const { activeSidebar } = props;
 
-    let currentPath = window.location.pathname;
-
     /**
      * render template
      */
@@ -30,14 +28,9 @@ export default function Sidebar(props) {
                 </div>
                 <div className="sidebar-menu">
                     <ul className="menu">
-                        <li className={`sidebar-item ${currentPath === LinkName.LIST_USER ? 'active' : ''}`}>
+                        <li className={`sidebar-item active`}>
                             <Link to={LinkName.LIST_USER} className="sidebar-link">
                                 <span>会員管理</span>
-                            </Link>
-                        </li>
-                        <li className={`sidebar-item ${currentPath === LinkName.FORM_REGISTER ? 'active' : ''}`}>
-                            <Link to={LinkName.FORM_REGISTER} className="sidebar-link">
-                                <span>会員登録</span>
                             </Link>
                         </li>
                     </ul>
