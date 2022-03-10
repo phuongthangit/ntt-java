@@ -1,3 +1,4 @@
+import moment from "moment";
 /**
  * replace string
  * @param {*} message 
@@ -13,4 +14,18 @@ export function replaceString(message, newValue = []) {
     }
 
     return message;
+}
+
+/**
+ * format date
+ * @param {*} dateString 
+ * @returns 
+ */
+export function formatDate(dateString) {
+    let dateFormat = '';
+    if (dateString) {
+        dateFormat = moment(dateString).format("YYYY年MM月DD日");
+    }
+
+    return dateFormat;
 }

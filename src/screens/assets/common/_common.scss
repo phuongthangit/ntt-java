@@ -98,3 +98,251 @@ select {
         transform: rotate(360deg);
     }
 }
+/** common table */
+.table-scroll{
+	overflow: auto;
+	max-height: 70vh;
+}
+
+.normal-table *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+table.normal-table thead th {
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.normal-table tr th,
+table.normal-table tr td {
+	width: fit-content;
+}
+
+table.normal-table thead td,
+table.normal-table thead th,
+table.normal-table tbody tr,
+table.normal-table tbody td {
+	border-bottom-width: 0;
+}
+
+table.normal-table:not(.table-dark) {
+	color: #000;
+}
+
+table.normal-table {
+	color: #000;
+	margin-bottom: 0;
+	min-width: max-content;
+	width: 100%;
+	font-size: 16px;
+	background-color: #fff;
+	border-collapse: collapse;
+	display: table;
+	text-align: left;
+}
+
+table.normal-table thead {
+	vertical-align: middle;
+	position: sticky;
+	top: 1px;
+	transform: translateY(-1px);
+	z-index: 1;
+}
+
+table.normal-table thead th {
+	border-right: 1px solid #ffffff;
+}
+table.normal-table thead th:last-child {
+	border-right: 1px solid #707070 !important;
+}
+
+table.normal-table thead th {
+	border-top: 0;
+	box-shadow: inset 0px 1px 0px 0px #e9e9e9;
+}
+
+table.normal-table th {
+	background-color: #707070;
+	color: #fff;
+	position: relative;
+	padding: 10px;
+	padding-right: 15px;
+	min-width: 65px;
+}
+table.normal-table tbody{
+	position: relative;
+}
+.table-scroll:after{
+	content: '';
+	height: 1px;
+	width: 100%;
+	background-color: #e9e9e9;
+	display: block;
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+table.normal-table thead th a {
+	width: 100%;
+	color: #fff;
+	position: relative;
+	font-size: 16px;
+	padding: 0 5px;
+}
+
+table.normal-table tbody tr:nth-of-type(odd) {
+	background-color: var(--white);
+}
+
+table.normal-table tbody tr:nth-of-type(even) {
+	background-color: #fdfdfd ;
+}
+table.normal-table tbody tr:not(.bgunread):hover td{
+	background-color: $color-main-light;
+}
+.layout-staff table.normal-table tbody tr:not(.bgunread):hover td{
+	background-color: #e8f9ff ;
+}
+table.normal-table tr {
+	height: 45px;
+}
+table.normal-table th .up{
+    position: absolute;
+    right: 3px;
+    top: 9px;
+    cursor: pointer;
+}
+table.normal-table th .down{
+    position: absolute;
+    right: 3px;
+    bottom: 9px;
+    cursor: pointer;
+}
+table.normal-table th .up:hover{
+    color: $color-main;
+}
+table.normal-table th .down:hover{
+    color: $color-main;
+}
+
+table.normal-table tr td .edit{
+    color: $color-text;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+table.normal-table tr td .delete{
+    color: $color-text;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+
+table.normal-table tr td {
+	font-weight: 400;
+	vertical-align: middle;
+}
+
+table.normal-table tr td a {
+	color: #000;
+}
+
+table.normal-table tbody td:not(:last-child) a {
+	display: block;
+}
+table.normal-table tbody td:last-child a {
+	display: unset;
+}
+table.normal-table td {
+	border: 1px solid #e9e9e9;
+	padding: 10px;
+}
+table.normal-table tr td:last-child a {
+	padding: 0 10px;
+	font-size: 20px;
+}
+[data-useragent*='Firefox'] table.normal-table {
+    border-bottom: 1px solid #dee2e6;
+    border-left: 0px;
+    border-right: 0px;
+}
+[data-useragent*='Firefox'] .table{
+	border-collapse: separate;
+	border-spacing: 1px;
+	background-color: #e9e9e9;
+}
+[data-useragent*='Firefox'] .table tr th {
+	border: none;
+}
+[data-useragent*='Firefox'] .table thead{
+	top: 2px;
+	transform: translateY(-2px);
+}
+[data-useragent*='Firefox'] .table tr td {
+	border: none;
+	background-color: #fff;
+	background-clip: padding-box;
+}
+table.normal-table th.column-small ,
+table.normal-table thead th.column-small ,
+table.normal-table tbody tr.column-small ,
+table.normal-table tbody tr.column-small {
+	white-space: nowrap;
+	width: 150px;
+}
+table.normal-table th.column-extra-small ,
+table.normal-table thead th.column-extra-small ,
+table.normal-table tbody tr.column-extra-small ,
+table.normal-table tbody tr.column-extra-small {
+	white-space: nowrap;
+	width: 80px;
+}
+table.normal-table th.column-medium ,
+table.normal-table thead th.column-medium ,
+table.normal-table tbody tr.column-medium ,
+table.normal-table tbody tr.column-medium {
+	white-space: nowrap;
+	width: 200px;
+}
+table.normal-table th.column-above-medium ,
+table.normal-table thead th.column-above-medium ,
+table.normal-table tbody tr.column-above-medium ,
+table.normal-table tbody tr.column-above-medium {
+	white-space: nowrap;
+	width: 300px;
+}
+th.importain-column ,
+table.normal-table th.importain-column ,
+table.normal-table thead th.importain-column ,
+table.normal-table tbody td.importain-column ,
+table.normal-table tbody td.importain-column {
+	white-space: nowrap;
+	max-width: 600px;
+	min-width: 400px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+td.break-word ,
+th.break-word {
+	max-width: 500px;
+	min-width: 300px;
+	white-space: normal !important;
+	word-break: break-all;
+}
+td.column-align-center ,
+th.column-align-center {
+	text-align: center !important;
+}
+td.column-align-left ,
+th.column-align-left {
+	text-align: left !important;
+}
+/** common table */
