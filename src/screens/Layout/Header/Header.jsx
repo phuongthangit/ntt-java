@@ -1,8 +1,12 @@
+//icon
 import user from "../../assets/img/user.png";
 import { FaAlignJustify } from "react-icons/fa";
 
 export default function Header(props) {
 
+    /**
+     * get property
+     */
     const { setActiveSidebar, activeSidebar } = props;
 
     /**

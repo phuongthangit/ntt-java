@@ -1,11 +1,17 @@
+import { useEffect, useState } from 'react';
+
 //packet
 import { Outlet } from 'react-router-dom';
+
+//component
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
-import { useEffect, useState } from 'react';
 
 export default function Layout() {
 
+    /**
+     * define state
+     */
     const [activeSidebar, setActiveSidebar] = useState(true);
 
     /**

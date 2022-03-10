@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
+
+//icon
 import { MdAddCircle } from "react-icons/md";
 import { GoPencil, GoTrashcan } from "react-icons/go";
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
+
+//constant
 import typeCode from "../../constants/typeCode";
 import { formatDate, sortUserList } from "../../utils/helper";
 import constants from "../../constants/constants";
-import SortTable from "../../components/Sort/SortTable";
-import ReactPaginate from 'react-paginate';
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
-import { useNavigate } from 'react-router-dom';
 import LinkName from "../../constants/linkName";
+
+//component
+import SortTable from "../../components/Sort/SortTable";
+
+//packet
+import ReactPaginate from 'react-paginate';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function ListUserScreen() {

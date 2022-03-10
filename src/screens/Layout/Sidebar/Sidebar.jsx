@@ -9,6 +9,9 @@ import LinkName from './../../../constants/linkName';
 
 export default function Sidebar(props) {
 
+    /**
+     * get property
+     */
     const { activeSidebar } = props;
 
     /**
