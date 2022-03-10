@@ -7,10 +7,13 @@ import constants from "../../constants/constants";
 import SortTable from "../../components/Sort/SortTable";
 import ReactPaginate from 'react-paginate';
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
+import LinkName from "../../constants/linkName";
 
 
 export default function ListUserScreen() {
 
+    let navigate = useNavigate();
     /**
      * define constant
      */
@@ -36,6 +39,10 @@ export default function ListUserScreen() {
         setPageCurrent(selectedPage + 1);
     }
 
+    const _onNavigate = () => {
+        navigate(LinkName.FORM_REGISTER);
+    }
+
     /**
      * sort
      * @param {*} column 
@@ -49,12 +56,18 @@ export default function ListUserScreen() {
         setUserList(sortUserList(userList, column, order));
     }
 
+    /**
+     * get page count
+     */
     useEffect(() => {
         if(userList){
             setPageCount(Math.ceil(constants.userList.length / pageLimit));
         }
     },[userList]);
 
+    /**
+     * set user when change page
+     */
     useEffect(() => {
         setUserList(sortUserList(constants.userList.slice((pageCurrent - 1) * pageLimit, (pageCurrent * pageLimit)), parameter.column, parameter.order));
     }, [pageCurrent]);
@@ -72,7 +85,7 @@ export default function ListUserScreen() {
                                 <div className="card-content">
                                     <div className="card-body">
                                         <div className="d-flex justify-content-end">
-                                            <button type="button" className="btn btn-primary btn-sm">会員登録 <MdAddCircle className="icon-add mx-1" /></button>
+                                            <button onClick={_onNavigate} type="button" className="btn btn-primary btn-sm">会員登録 <MdAddCircle className="icon-add mx-1" /></button>
                                         </div>
                                     </div>
                                     <div className="row mx-0">

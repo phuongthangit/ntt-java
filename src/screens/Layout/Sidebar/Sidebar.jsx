@@ -6,7 +6,6 @@ import logo from "../../assets/img/logo.png";
 
 //constant
 import LinkName from './../../../constants/linkName';
-import { useEffect } from 'react';
 
 export default function Sidebar(props) {
 
