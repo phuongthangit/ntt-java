@@ -2,6 +2,11 @@
     .card-body{
         padding: 1.25rem 10rem;
     }
+    .form-input-check{
+        .form-label{
+            margin-bottom: 0;
+        }
+    }
     .form-upload{
         cursor: pointer;
     }

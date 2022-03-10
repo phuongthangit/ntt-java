@@ -81,8 +81,8 @@ export default function FormRegisterScreen() {
                                         </div>
                                         
                                         <div className="row mb-3">
-                                            <div className="col-lg-6">
-                                                <div className="form-group d-flex flex-wrap">
+                                            <div className="col-lg-12">
+                                                <div className="form-group d-flex flex-wrap form-input-check">
                                                     <LabelComponent label={"性別"} required={true} />
                                                     <div className="d-flex flex-wrap">
                                                         <RadioButtonComponent
@@ -128,7 +128,7 @@ export default function FormRegisterScreen() {
                                                 <InputFlexComponent
                                                     type={"text"}
                                                     label={"電話番号"}
-                                                    placeholder={"電話番号は半角数字にしてください。"}
+                                                    placeholder={"電話番号を入力してください"}
                                                     name={"phone"}
                                                     pattern = {new RegExp('^[0-9]{10,11}$')}
                                                     message = {"話番号は10桁か11桁の数値で入力してください。"}
@@ -160,7 +160,7 @@ export default function FormRegisterScreen() {
                                                 <InputFlexComponent
                                                     type={"text"}
                                                     label={"位置"}
-                                                    placeholder={"その他位置を入力してください"}
+                                                    placeholder={"位置を入力してください"}
                                                     name={"position"}
                                                     required={false} />
                                             </div>
@@ -190,7 +190,7 @@ export default function FormRegisterScreen() {
                                                 <InputFlexComponent
                                                     type={"text"}
                                                     label={"郵便番号"}
-                                                    placeholder={"その他郵便番号を入力してください"}
+                                                    placeholder={"郵便番号を入力してください"}
                                                     name={"zip_code"}
                                                     required={false} />
                                             </div>
@@ -200,7 +200,7 @@ export default function FormRegisterScreen() {
                                                 <InputFlexComponent
                                                     type={"text"}
                                                     label={"住所１"}
-                                                    placeholder={"その他住所１を入力してください"}
+                                                    placeholder={"住所１を入力してください"}
                                                     name={"address_1"}
                                                     required={false} />
                                             </div>
@@ -210,7 +210,7 @@ export default function FormRegisterScreen() {
                                                 <InputFlexComponent
                                                     type={"text"}
                                                     label={"住所２"}
-                                                    placeholder={"その他住所２を入力してください"}
+                                                    placeholder={"住所２を入力してください"}
                                                     name={"address_2"}
                                                     required={false} />
                                             </div>
