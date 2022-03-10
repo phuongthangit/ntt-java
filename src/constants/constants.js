@@ -85,6 +85,108 @@ const constants = {
             other: 'その他 5'
 
         },
+        {
+            no: 6,
+            fullname: '山田　太郎 6',
+            gender: 0,
+            birthday: '2000-04-14 00:00:00',
+            phone: '03-XXXX-XXXX',
+            email: 'xxx@gmail.com',
+            room: '部署 6',
+            position: '位置 6',
+            application_date: '2016-09-11 00:00:00',
+            zip_code: '001-3005',
+            address: '都道府県 6',
+            address_1: '住所１.６',
+            address_2: '住所２.６',
+            other: 'その他 6'
+
+        },
+        {
+            no: 7,
+            fullname: '山田　太郎 7',
+            gender: 1,
+            birthday: '1999-06-25 00:00:00',
+            phone: '03-XXXX-XXXX',
+            email: 'xxx@gmail.com',
+            room: '部署 7',
+            position: '位置 7',
+            application_date: '2018-09-11 00:00:00',
+            zip_code: '001-3004',
+            address: '都道府県 7',
+            address_1: '住所１.５',
+            address_2: '住所２.５',
+            other: 'その他 7'
+
+        },
+        {
+            no: 8,
+            fullname: '山田　太郎 8',
+            gender: 1,
+            birthday: '1996-03-25 00:00:00',
+            phone: '03-XXXX-XXXX',
+            email: 'xxx@gmail.com',
+            room: '部署 8',
+            position: '位置 8',
+            application_date: '2018-09-11 00:00:00',
+            zip_code: '001-3004',
+            address: '都道府県 8',
+            address_1: '住所１.１',
+            address_2: '住所２.５',
+            other: 'その他 8'
+
+        },
+        {
+            no: 9,
+            fullname: '山田　太郎 9',
+            gender: 0,
+            birthday: '1990-07-20 00:00:00',
+            phone: '03-XXXX-XXXX',
+            email: 'xxx@gmail.com',
+            room: '部署 9',
+            position: '位置 9',
+            application_date: '2018-09-11 00:00:00',
+            zip_code: '001-3010',
+            address: '都道府県 9',
+            address_1: '住所５',
+            address_2: '住所５',
+            other: 'その他 9'
+
+        },
+        {
+            no: 10,
+            fullname: '山田　太郎 10',
+            gender: 1,
+            birthday: '2000-07-25 00:00:00',
+            phone: '03-XXXX-XXXX',
+            email: 'xxx@gmail.com',
+            room: '部署 10',
+            position: '位置 10',
+            application_date: '2018-09-11 00:00:00',
+            zip_code: '001-3004',
+            address: '都道府県 10',
+            address_1: '住所５',
+            address_2: '住所２',
+            other: 'その他 10'
+
+        },
+        {
+            no: 11,
+            fullname: '山田　太郎 11',
+            gender: 0,
+            birthday: '1990-03-25 00:00:00',
+            phone: '03-XXXX-XXXX',
+            email: 'xxx@gmail.com',
+            room: '部署 11',
+            position: '位置 11',
+            application_date: '2018-09-11 00:00:00',
+            zip_code: '001-3004',
+            address: '都道府県 11',
+            address_1: '住所１',
+            address_2: '住所２',
+            other: 'その他 11'
+
+        },
     ]
 }
 

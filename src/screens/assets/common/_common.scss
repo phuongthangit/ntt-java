@@ -353,3 +353,41 @@ th.column-align-left {
 	text-align: left !important;
 }
 /** common table */
+
+/** pagination */
+.pagination li a {
+    position: relative;
+    display: block;
+    padding: .3rem .6rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    font-weight: 700;
+    border: 1px solid $color-main;
+    background-color: #fff;
+    color: $color-main !important;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination li a:hover {
+    background-color: $color-main;
+    color: #fff !important;
+}
+
+.pagination li.active a {
+    z-index: 2;
+    color: #fff !important;
+    background-color: $color-main;
+    border-color: $color-main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li:first-child a {
+    margin-left: 0;
+}
+.pagination li.disabled a {
+    display: none;
+}
+/*end pagination*/

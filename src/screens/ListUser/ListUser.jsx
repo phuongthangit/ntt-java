@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { MdAddCircle } from "react-icons/md";
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { GoPencil, GoTrashcan } from "react-icons/go";
 import typeCode from "../../constants/typeCode";
-import { activeIcon, formatDate, sortUserList } from "../../utils/helper";
+import { formatDate, sortUserList } from "../../utils/helper";
 import constants from "../../constants/constants";
 import SortTable from "../../components/Sort/SortTable";
+import ReactPaginate from 'react-paginate';
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 
 
 export default function ListUserScreen() {
@@ -13,21 +14,50 @@ export default function ListUserScreen() {
     /**
      * define constant
      */
-    const [userList, setUserList] = useState(() => {
-        return constants.userList;
-    });
     const [parameter, setParameter] = useState({
         column: '',
         order: ''
     });
+    const [pageLimit] = useState(5);
+    const [pageCount, setPageCount] = useState(0);
+    const [pageCurrent, setPageCurrent] = useState(1);
 
+    const [userList, setUserList] = useState(() => {
+        return constants.userList.slice(pageCurrent - 1, pageCurrent - 1 + pageLimit);
+    });
+
+
+    /**
+     * on page change
+     * @param {*} 
+     */
+    const _onPageChange = (e) => {
+        const selectedPage = e.selected;
+        setPageCurrent(selectedPage + 1);
+    }
+
+    /**
+     * sort
+     * @param {*} column 
+     * @param {*} order 
+     */
     const _sort = (column, order) => {
         setParameter({
             column: column,
             order: order
         })
-        setUserList(sortUserList(constants.userList, column, order));
+        setUserList(sortUserList(userList, column, order));
     }
+
+    useEffect(() => {
+        if(userList){
+            setPageCount(Math.ceil(constants.userList.length / pageLimit));
+        }
+    },[userList]);
+
+    useEffect(() => {
+        setUserList(sortUserList(constants.userList.slice((pageCurrent - 1) * pageLimit, (pageCurrent * pageLimit)), parameter.column, parameter.order));
+    }, [pageCurrent]);
 
     /**
      * render template
@@ -174,6 +204,18 @@ export default function ListUserScreen() {
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            {pageCount > 1 && <div className="d-flex justify-content-end mx-3">
+                                                <ReactPaginate
+                                                    previousLabel={<AiOutlineDoubleLeft className="previous" />}
+                                                    nextLabel={<AiOutlineDoubleRight className="next" />}
+                                                    breakLabel={"..."}
+                                                    breakClassName={"break-me"}
+                                                    pageCount={pageCount}
+                                                    onPageChange={_onPageChange}
+                                                    containerClassName={"pagination"}
+                                                    subContainerClassName={"pages pagination"}
+                                                    activeClassName={"active"} />
+                                            </div>}
                                         </div>
                                     </div>
                                 </div>
