@@ -1,99 +1,37 @@
+import { useEffect, useState } from "react";
 import { MdAddCircle } from "react-icons/md";
-import { Link } from "react-router-dom";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { GoPencil, GoTrashcan } from "react-icons/go";
 import typeCode from "../../constants/typeCode";
-import { formatDate } from "../../utils/helper";
+import { activeIcon, formatDate, sortUserList } from "../../utils/helper";
+import constants from "../../constants/constants";
+import SortTable from "../../components/Sort/SortTable";
 
 
 export default function ListUserScreen() {
-    const userList = [
-        {
-            no: 1,
-            fullname: '山田　太郎 1',
-            gender: 1,
-            birthday: '1990-01-01 00:00:00',
-            phone: '03-XXXX-XXXX',
-            email: 'xxx@gmail.com',
-            room: '部署 1',
-            position: '位置 1',
-            application_date: '2021-11-15 00:00:00',
-            zip_code: '001-3000',
-            address: '都道府県 1',
-            address_1: '住所１.１',
-            address_2: '住所２.１',
-            other: 'その他 1'
 
-        },
-        {
-            no: 2,
-            fullname: '山田　太郎 2',
-            gender: 0,
-            birthday: '1990-01-02 00:00:00',
-            phone: '03-XXXX-XXXX',
-            email: 'xxx@gmail.com',
-            room: '部署 2',
-            position: '位置 2',
-            application_date: '2020-11-15 00:00:00',
-            zip_code: '001-3001',
-            address: '都道府県 2',
-            address_1: '住所１.２',
-            address_2: '住所２.２',
-            other: 'その他 2'
+    /**
+     * define constant
+     */
+    const [userList, setUserList] = useState(() => {
+        return constants.userList;
+    });
+    const [parameter, setParameter] = useState({
+        column: '',
+        order: ''
+    });
 
-        },
-        {
-            no: 3,
-            fullname: '山田　太郎 3',
-            gender: 0,
-            birthday: '1992-01-03 00:00:00',
-            phone: '03-XXXX-XXXX',
-            email: 'xxx@gmail.com',
-            room: '部署 3',
-            position: '位置 3',
-            application_date: '2020-11-15 00:00:00',
-            zip_code: '001-3002',
-            address: '都道府県 3',
-            address_1: '住所１.３',
-            address_2: '住所２.３',
-            other: 'その他 3'
+    const _sort = (column, order) => {
+        setParameter({
+            column: column,
+            order: order
+        })
+        setUserList(sortUserList(constants.userList, column, order));
+    }
 
-        },
-        {
-            no: 4,
-            fullname: '山田　太郎 4',
-            gender: 0,
-            birthday: '1993-04-02 00:00:00',
-            phone: '03-XXXX-XXXX',
-            email: 'xxx@gmail.com',
-            room: '部署 4',
-            position: '位置 4',
-            application_date: '2022-11-25 00:00:00',
-            zip_code: '001-3003',
-            address: '都道府県 4',
-            address_1: '住所１.４',
-            address_2: '住所２.４',
-            other: 'その他 4'
-
-        },
-        {
-            no: 5,
-            fullname: '山田　太郎 5',
-            gender: 1,
-            birthday: '2000-07-25 00:00:00',
-            phone: '03-XXXX-XXXX',
-            email: 'xxx@gmail.com',
-            room: '部署 5',
-            position: '位置 5',
-            application_date: '2018-09-11 00:00:00',
-            zip_code: '001-3004',
-            address: '都道府県 5',
-            address_1: '住所１.５',
-            address_2: '住所２.５',
-            other: 'その他 5'
-
-        },
-    ]
+    /**
+     * render template
+     */
     return (
         <main className="warp list-user">
             <div className="mb-4">
@@ -114,79 +52,93 @@ export default function ListUserScreen() {
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" className="column-extra-small">
-                                                                No
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                No.
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 姓名
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"fullname"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-extra-small">
                                                                 性別
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"gender"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 生年月日
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"birthday"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 電話番号
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 メールアドレス
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 部署
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"room"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 位置
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"position"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 入社日
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"application_date"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 郵便番号
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"zip_code"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 都道府県
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"address"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 住所１
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"address_1"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 住所２
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"address_2"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 その他
-                                                                <AiFillCaretDown className="down" />
-                                                                <AiFillCaretUp className="up" />
+                                                                <SortTable
+                                                                    name={"other"}
+                                                                    sort={_sort}
+                                                                    parameter={parameter} />
                                                             </th>
                                                             <th scope="col" className="column-small">
                                                                 編集/削除
-                                                                <AiFillCaretDown className="down px-2" />
-                                                                <AiFillCaretUp className="up mx-2" />
                                                             </th>
 
                                                         </tr>

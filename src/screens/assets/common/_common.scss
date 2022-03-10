@@ -232,6 +232,13 @@ table.normal-table th .down:hover{
     color: $color-main;
 }
 
+table.normal-table th .up.active{
+    color: $color-main;
+}
+table.normal-table th .down.active{
+    color: $color-main;
+}
+
 table.normal-table tr td .edit{
     color: $color-text;
     width: 20px;
