@@ -62,7 +62,7 @@ export default function InputComponent(props) {
                 />
             </div>
             {errors[name] && (
-                <FormFeedback className="d-block" style={{ paddingLeft: '45px' }}>{errors[name].message}</FormFeedback>
+                <FormFeedback className="d-block" style={{ paddingLeft: '40px' }}>{errors[name].message}</FormFeedback>
             )}
         </>
     )

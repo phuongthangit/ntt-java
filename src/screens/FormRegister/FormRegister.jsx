@@ -131,7 +131,7 @@ export default function FormRegisterScreen() {
                                                     placeholder={"電話番号を入力してください"}
                                                     name={"phone"}
                                                     pattern = {new RegExp('^[0-9]{10,11}$')}
-                                                    message = {"話番号は10桁か11桁の数値で入力してください。"}
+                                                    message = {"電話番号は10桁か11桁の数値で入力してください"}
                                                     required={false} />
                                             </div>
                                         </div>
